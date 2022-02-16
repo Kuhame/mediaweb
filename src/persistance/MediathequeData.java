@@ -3,7 +3,7 @@ package persistance;
 import java.util.List;
 import mediatek2022.*;
 
-// classe mono-instance  dont l'unique instance est connue de la m�diatheque
+// classe mono-instance  dont l'unique instance est connue de la médiatheque
 // via une auto-déclaration dans son bloc static
 
 public class MediathequeData implements PersistentMediatheque {
