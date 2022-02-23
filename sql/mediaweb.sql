@@ -90,10 +90,3 @@ INSERT INTO cd VALUES (1, 'EVERGLOW', 7);
 INSERT INTO emprunt VALUES (0, 0);
 
 COMMIT;
-
-select * from utilisateur;
-select * from document;
-select * from livre;
-select * from dvd;
-select * from cd;
-select * from emprunt;
