@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mediaweb</title>
+  </head>
+  <body class="scale135">
+    <main
+      class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center is-viewport"
+    >
+      <h1 class="title">Connexion</h1>
+      <form action="./accueil.jsp" method="post" style="width: 350px">
+        <!--Nom d'utilisateur-->
+        <div class="field">
+          <label class="label">Nom d'utilisateur</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              name="pseudo"
+              placeholder="Nom d'utilisateur"
+            />
+          </div>
+        </div>
+        <!--Mot de passe-->
+        <div class="field">
+          <label class="label">Mot de passe</label>
+          <div class="control">
+            <input
+              class="input"
+              type="password"
+              name="motdepasse"
+              placeholder="Mot de passe"
+            />
+          </div>
+        </div>
+        <!--Connexion-->
+        <div class="field">
+          <div class="control">
+            <input
+              type="submit"
+              class="button is-primary is-fullwidth"
+              value="Connexion"
+            />
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
