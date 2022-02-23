@@ -1,3 +1,7 @@
+html {
+  overflow: hidden;
+}
+
 .scale135 {
   transform: scale(1.25);
 }

@@ -10,6 +10,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mediaweb</title>
+    <script
+      src="https://kit.fontawesome.com/f0cb48158b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body class="scale135">
     <main
@@ -20,25 +24,31 @@
         <!--Nom d'utilisateur-->
         <div class="field">
           <label class="label">Nom d'utilisateur</label>
-          <div class="control">
+          <div class="control has-icons-left">
             <input
-              class="input"
+              class="input is-rounded"
               type="text"
               name="pseudo"
               placeholder="Nom d'utilisateur"
             />
+            <span class="icon is-small is-left">
+              <i class="fa-solid fa-user"></i>
+            </span>
           </div>
         </div>
         <!--Mot de passe-->
         <div class="field">
           <label class="label">Mot de passe</label>
-          <div class="control">
+          <div class="control has-icons-left">
             <input
-              class="input"
+              class="input is-rounded"
               type="password"
               name="motdepasse"
               placeholder="Mot de passe"
             />
+            <span class="icon is-small is-left">
+              <i class="fa-solid fa-lock"></i>
+            </span>
           </div>
         </div>
         <!--Connexion-->
@@ -46,7 +56,7 @@
           <div class="control">
             <input
               type="submit"
-              class="button is-primary is-fullwidth"
+              class="button is-primary is-rounded is-fullwidth"
               value="Connexion"
             />
           </div>
