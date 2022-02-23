@@ -43,7 +43,7 @@ CREATE TABLE cd (
     artiste VARCHAR(30),
     idDocument NUMBER,
     PRIMARY KEY (idCD),
-    FOREIGN KEY (idDocument) REFERENCES document (idDocument)
+    FOREIGN KEY (idDocument) REFERENCES document(idDocument)
 );
 
 CREATE TABLE emprunt (
