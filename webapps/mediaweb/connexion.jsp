@@ -36,6 +36,7 @@
             </span>
           </div>
         </div>
+        
         <!--Mot de passe-->
         <div class="field">
           <label class="label">Mot de passe</label>
