@@ -16,5 +16,20 @@ public class User implements Utilisateur{
 		this.nom=nom;
 		this.estBiblio = (estBiblio != 0) ? true : false;
 	}
+
+	@Override
+	public String name() {
+		return this.nom;
+	}
+
+	@Override
+	public boolean isBibliothecaire() {
+		return this.estBiblio;
+	}
+
+	@Override
+	public Object[] data() {
+		return null;
+	}
 	
 }
