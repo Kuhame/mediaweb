@@ -1,6 +1,10 @@
 package persistance;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
+
 import mediatek2022.*;
 
 // classe mono-instance  dont l'unique instance est connue de la médiatheque
@@ -25,6 +29,27 @@ public class MediathequeData implements PersistentMediatheque {
 	// si pas trouvé, renvoie null
 	@Override
 	public Utilisateur getUser(String login, String password) {
+		try {
+			Connection connec = DataBase.connexionBD();
+			PreparedStatement reqUser= connec.prepareStatement("SELECT * FROM utilisateur WHERE pseudo = ? AND motdepasse = ?");
+			reqUser.setString(1,login);
+			reqUser.setString(2, password);
+			
+			ResultSet res = reqUser.executeQuery();
+			while (res.next()){
+				int id = res.getInt("idUtilisateur");
+				String pseudo = res.getString("pseudo");
+				String motdepasse = res.getString("motdepasse");
+				String nom = res.getString("nom");
+				int estBiblio = res.getInt("estBibliothecaire");
+				return new User(id, pseudo, motdepasse, nom, estBiblio);
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return null;
 	}
 
