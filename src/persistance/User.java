@@ -29,7 +29,7 @@ public class User implements Utilisateur{
 
 	@Override
 	public Object[] data() {
-		return null;
+		return new Object[] {id, pseudo, mdp};
 	}
 	
 }
