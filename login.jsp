@@ -22,12 +22,12 @@
       <form action="./accueil.jsp" method="post" style="width: 350px">
         <!--Nom d'utilisateur-->
         <div class="field">
-          <label class="label">Nom d'utilisateur</label>
+          <label for="pseudo" class="label">Nom d'utilisateur</label>
           <div class="control has-icons-left">
             <input
               class="input is-rounded"
               type="text"
-              name="pseudo"
+              id="pseudo"
               placeholder="Nom d'utilisateur"
             />
             <span class="icon is-small is-left">
@@ -38,12 +38,12 @@
         
         <!--Mot de passe-->
         <div class="field">
-          <label class="label">Mot de passe</label>
+          <label for="motdepasse" class="label">Mot de passe</label>
           <div class="control has-icons-left">
             <input
               class="input is-rounded"
               type="password"
-              name="motdepasse"
+              id="motdepasse"
               placeholder="Mot de passe"
             />
             <span class="icon is-small is-left">
