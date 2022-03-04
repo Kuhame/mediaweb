@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(@NotNull HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServletException {
+			throws IOException {
 
 		HttpSession session = request.getSession(true);
 		String login = request.getParameter("pseudo");
@@ -23,10 +23,10 @@ public class LoginServlet extends HttpServlet {
 		
 		if (user != null) {
 			session.setAttribute("user", user);
-			getServletContext().getRequestDispatcher("/accueil.jsp").forward(request, response);
+			response.sendRedirect(request.getContextPath() + "/accueil.jsp");
 		}
 		else {
-			getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+			response.sendRedirect(request.getContextPath() + "/login.jsp");
 		}
 		
 	}
