@@ -9,9 +9,9 @@ import java.sql.DriverManager;
  */
 public class DataBase {
 
-	private static String url_jdbc = "jdbc:mysql://localhost;testjee";
-	private static String login = "root";
-	private static String pwd = "";
+	private static final String url_jdbc = "jdbc:mysql://localhost;mediaweb";
+	private static final String login = "root";
+	private static final String pwd = "";
 
 	
 	public static Connection connexionBD() throws Exception {
