@@ -3,11 +3,11 @@ package persistance;
 import mediatek2022.Utilisateur;
 
 public class User implements Utilisateur{
-	private int id;
-	private String pseudo;
-	private String mdp;
-	private String nom;
-	private boolean estBiblio;
+	private final int id;
+	private final String pseudo;
+	private final String mdp;
+	private final String nom;
+	private final boolean estBiblio;
 	
 	public User(int id, String pseudo, String mdp, String nom, int estBiblio) {
 		this.id=id;
