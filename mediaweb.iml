@@ -38,5 +38,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="bulma" level="application" />
+    <orderEntry type="library" name="f0cb48158b" level="application" />
   </component>
 </module>
