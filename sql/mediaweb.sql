@@ -1,54 +1,45 @@
-DROP TABLE utilisateur CASCADE CONSTRAINTS PURGE;
-DROP TABLE document CASCADE CONSTRAINTS PURGE;
-DROP TABLE livre PURGE;
-DROP TABLE dvd PURGE;
-DROP TABLE cd PURGE;
-DROP TABLE emprunt PURGE;
-
--- TODO add sequences
-
 CREATE TABLE utilisateur (
-    idUtilisateur NUMBER,
+    idUtilisateur INT,
     pseudo VARCHAR(30),
     motdepasse VARCHAR(30),
     nom VARCHAR(30),
-    estBibliothecaire NUMBER(1),
+    estBibliothecaire tinyint(1),
     PRIMARY KEY (idUtilisateur)
 );
 
 CREATE TABLE document (
-    idDocument NUMBER,
+    idDocument INT,
     nom VARCHAR(30),
     PRIMARY KEY (idDocument)
 );
 
 CREATE TABLE livre (
-    idLivre NUMBER,
+    idLivre INT,
     auteur VARCHAR(30),
-    idDocument NUMBER,
+    idDocument INT,
     PRIMARY KEY (idLivre),
     FOREIGN KEY (idDocument) REFERENCES document(idDocument)
 );
 
 CREATE TABLE dvd (
-    idDVD NUMBER,
+    idDVD INT,
     editeur VARCHAR(30),
-    idDocument NUMBER,
+    idDocument INT,
     PRIMARY KEY (idDVD),
     FOREIGN KEY (idDocument) REFERENCES document(idDocument)
 );
 
 CREATE TABLE cd (
-    idCD NUMBER,
+    idCD INT,
     artiste VARCHAR(30),
-    idDocument NUMBER,
+    idDocument INT,
     PRIMARY KEY (idCD),
     FOREIGN KEY (idDocument) REFERENCES document(idDocument)
 );
 
 CREATE TABLE emprunt (
-    idUtilisateur NUMBER,
-    idDocument NUMBER,
+    idUtilisateur INT,
+    idDocument INT,
     PRIMARY KEY (idUtilisateur, idDocument),
     FOREIGN KEY (idUtilisateur) REFERENCES utilisateur(idUtilisateur),
     FOREIGN KEY (idDocument) REFERENCES document(idDocument)
@@ -88,5 +79,3 @@ INSERT INTO cd VALUES (0, 'ENHYPEN', 3);
 INSERT INTO cd VALUES (1, 'EVERGLOW', 7);
 
 INSERT INTO emprunt VALUES (0, 0);
-
-COMMIT;
