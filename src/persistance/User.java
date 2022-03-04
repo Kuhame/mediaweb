@@ -14,7 +14,7 @@ public class User implements Utilisateur{
 		this.pseudo=pseudo;
 		this.mdp=mdp;
 		this.nom=nom;
-		this.estBiblio = (estBiblio != 0) ? true : false;
+		this.estBiblio = estBiblio != 0;
 	}
 
 	@Override

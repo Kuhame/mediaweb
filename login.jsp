@@ -19,7 +19,7 @@
       class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center is-viewport"
     >
       <h1 class="title">Connexion</h1>
-      <form action="./accueil.jsp" method="post" style="width: 350px">
+      <form action="login" method="post" style="width: 350px">
         <!--Nom d'utilisateur-->
         <div class="field">
           <label for="pseudo" class="label">Nom d'utilisateur</label>
@@ -28,6 +28,7 @@
               class="input is-rounded"
               type="text"
               id="pseudo"
+              name="pseudo"
               placeholder="Nom d'utilisateur"
             />
             <span class="icon is-small is-left">
@@ -44,6 +45,7 @@
               class="input is-rounded"
               type="password"
               id="motdepasse"
+              name="motdepasse"
               placeholder="Mot de passe"
             />
             <span class="icon is-small is-left">

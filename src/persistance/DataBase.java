@@ -9,7 +9,7 @@ import java.sql.DriverManager;
  */
 public class DataBase {
 
-	private static final String url_jdbc = "jdbc:mysql://localhost;mediaweb";
+	private static final String url_jdbc = "jdbc:mysql://localhost/mediaweb";
 	private static final String login = "root";
 	private static final String password = "";
 

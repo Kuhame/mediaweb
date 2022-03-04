@@ -31,8 +31,8 @@ public class MediathequeData implements PersistentMediatheque {
 	public Utilisateur getUser(String login, String password) {
 		try {
 			Connection connec = DataBase.connexionBD();
-			PreparedStatement reqUser= connec.prepareStatement("SELECT * FROM utilisateur WHERE pseudo = ? AND motdepasse = ?");
-			reqUser.setString(1,login);
+			PreparedStatement reqUser = connec.prepareStatement("SELECT * FROM utilisateur WHERE pseudo = ? AND motdepasse = ?");
+			reqUser.setString(1, login);
 			reqUser.setString(2, password);
 			
 			ResultSet res = reqUser.executeQuery();
