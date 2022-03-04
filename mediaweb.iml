@@ -12,19 +12,18 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/mediatek2022.jar!/" />
+          <root url="jar://$MODULE_DIR$/WEB-INF/lib/mediatek2022.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/lib/mediatek2022.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/persistance.jar!/" />
+          <root url="jar://$MODULE_DIR$/WEB-INF/lib/mediatek2022.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/mysql-connector-java-8.0.28.jar!/" />
+          <root url="jar://$MODULE_DIR$/WEB-INF/lib/mysql-connector-java-8.0.28.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -33,7 +32,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/servlet-api.jar!/" />
+          <root url="jar://$MODULE_DIR$/WEB-INF/lib/servlet-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
