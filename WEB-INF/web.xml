@@ -16,4 +16,13 @@
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EmprunterServlet</servlet-name>
+        <servlet-class>services.EmprunterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EmprunterServlet</servlet-name>
+        <url-pattern>/emprunter</url-pattern>
+    </servlet-mapping>
 </web-app>

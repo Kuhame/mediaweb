@@ -1,17 +1,18 @@
+<%@ page import="mediatek2022.Utilisateur" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ page import="persistance.User" %>
+
 <%
 	if (session.getAttribute("user") == null) {
 		response.sendRedirect(request.getContextPath() + "./login.jsp");
 	}
 
-	User u = (User) session.getAttribute("user");
+	Utilisateur u = (Utilisateur) session.getAttribute("user");
 
 	String actions;
 	if (!u.isBibliothecaire()) {
 		actions = "<li>Ajouter un nouveau document</li>";
 	} else {
-		actions = "<li>Emprunter un document</li><li>Rendre un document</li>";
+		actions = "<li><a href=\"emprunter\">Emprunter un document</a></li><li>Rendre un document</li>";
 	}
 %>
 
@@ -27,7 +28,7 @@
 		<p>Bienvenue, <%= u.name() %> !</p>
 		<ul>
 			<%= actions %>
-			<li><a href="logout">Déconnexion</a></li>
+			<li><a href="logout">Se déconnecter</a></li>
 		</ul>
 	</body>
 </html>
