@@ -11,14 +11,14 @@ public class DataBase {
 
 	private static final String url_jdbc = "jdbc:mysql://localhost;mediaweb";
 	private static final String login = "root";
-	private static final String pwd = "";
+	private static final String password = "";
 
 	
 	public static Connection connexionBD() throws Exception {
 		
 		Class.forName("com.mysql.jdbc.Driver");
 		
-		Connection conn = DriverManager.getConnection(url_jdbc, login, pwd);
+		Connection conn = DriverManager.getConnection(url_jdbc, login, password);
 		
 		return conn;
 	}
