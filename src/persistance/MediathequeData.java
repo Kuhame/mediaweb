@@ -130,9 +130,9 @@ public class MediathequeData implements PersistentMediatheque {
 	public void ajoutDocument(int type, Object... args) {
 		try {
 			Connection connec = DataBase.connexionBD();
-			PreparedStatement req = connec.prepareStatement("INSERT INTO document (nom, typeDocument, auteur, emprunteur) VALUES (?, ?, ?, -1)");
+			PreparedStatement req = connec.prepareStatement("INSERT INTO document (nom, typeDocument, auteur, emprunteur) VALUES (?, ?, ?, ?)");
 
-			// Nom du document
+			// 0 : Nom du document
 			req.setString(1, (String) args[0]);
 
 			String typeD;
@@ -146,10 +146,12 @@ public class MediathequeData implements PersistentMediatheque {
 			// Type du document
 			req.setString(2, typeD);
 
-			// Auteur du document
+			// 1: Auteur du document
 			req.setString(3, (String) args[1]);
 
-			req.executeQuery();
+			req.setObject(4, null);
+
+			req.executeUpdate();
 
 		} catch (Exception e) {
 			e.printStackTrace();

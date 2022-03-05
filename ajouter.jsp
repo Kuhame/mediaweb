@@ -1,3 +1,13 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%
+    String msg = (String) request.getAttribute("msg");
+	if (msg == null) {
+		msg = "<p></p>";
+	} else {
+        msg = "<div class=\"notification\"><button class=\"delete\"></button>" + msg + "</div>";
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -18,8 +28,14 @@
 		<main
 			class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center is-viewport"
 		>
-			<h1 class="title has-text-white">Ajouter un document</h1>
-			<form action="ajouter" method="post" class="box" style="width: 500px">
+			<h1 class="title">Ajouter un document</h1>
+			<div id="wrapper" class="box" style="width: 500px">
+                <%= msg %>
+                <form
+				action="ajouter"
+				method="post"
+				id="ajouter"
+			>
 				<!--Nom-->
 				<div class="field">
 					<label for="nom" class="label">Nom</label>
@@ -40,10 +56,10 @@
 
 				<!--Type-->
 				<div class="field">
-					<label for="typeDocument" class="label">Type</label>
+					<label for="type" class="label">Type</label>
 					<div class="control">
 						<div class="select">
-							<select>
+							<select id="type" name="type" form="ajouter">
 								<option disabled selected>Type de document</option>
 								<option value="1">Livre</option>
 								<option value="2">DVD</option>
@@ -95,12 +111,15 @@
 					<div class="control">
 						<input
 							type="submit"
-							class="button is-primary is-fullwidth"
+							class="button is-black is-fullwidth"
 							value="Ajouter"
 						/>
 					</div>
 				</div>
 			</form>
+            </div>
 		</main>
+
+        <script src="./js/main.js"></script>
 	</body>
 </html>
