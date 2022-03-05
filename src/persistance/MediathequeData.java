@@ -40,13 +40,13 @@ public class MediathequeData implements PersistentMediatheque {
 				int emprunteur = -1;
 
 				switch (typeDocument) {
-					case "livre":
+					case "Livre":
 						documents.add(new Livre(idDocument, nom, typeDocument, auteur, description, emprunteur));
 						break;
-					case "dvd":
+					case "DVD":
 						documents.add(new DVD(idDocument, nom, typeDocument, auteur, description, emprunteur));
 						break;
-					case "cd":
+					case "CD":
 						documents.add(new CD(idDocument, nom, typeDocument, auteur, description, emprunteur));
 						break;
 					default:
@@ -109,11 +109,11 @@ public class MediathequeData implements PersistentMediatheque {
 			int emprunteur = res.getInt("emprunteur");
 
 			switch (typeDocument) {
-				case "livre":
+				case "Livre":
 					return new Livre(idDocument, nom, typeDocument, auteur, description, emprunteur);
-				case "dvd":
+				case "DVD":
 					return new DVD(idDocument, nom, typeDocument, auteur, description, emprunteur);
-				case "cd":
+				case "CD":
 					return new CD(idDocument, nom, typeDocument, auteur, description, emprunteur);
 				default:
 					throw new IllegalArgumentException("Numéro de document inconnu");
@@ -137,11 +137,11 @@ public class MediathequeData implements PersistentMediatheque {
 
 			String typeD;
 			if (type == 0) {
-				typeD = "livre";
+				typeD = "Livre";
 			} else if (type == 1) {
-				typeD = "dvd";
+				typeD = "DVD";
 			} else {
-				typeD = "cd";
+				typeD = "CD";
 			}
 			// Type du document
 			req.setString(2, typeD);
