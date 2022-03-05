@@ -20,12 +20,7 @@ public class RendreServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         Utilisateur u = (Utilisateur) session.getAttribute("user");
 
-        List<Integer> idDocumentsEmpruntes = (List<Integer>) u.data()[3];
-
-        List<Document> documentsEmpruntes = new ArrayList<>();
-        for (Integer i : idDocumentsEmpruntes) {
-            documentsEmpruntes.add(Mediatheque.getInstance().getDocument(i));
-        }
+        List<Document> documentsEmpruntes = getDocuments(u);
 
         req.setAttribute("documentsEmpruntes", documentsEmpruntes);
         req.getRequestDispatcher("/rendre.jsp").forward(req, resp);
@@ -43,12 +38,7 @@ public class RendreServlet extends HttpServlet {
             Mediatheque.getInstance().retour(d, u);
             req.setAttribute("msg", "Retour effectué avec succès");
 
-            List<Integer> idDocumentsEmpruntes = (List<Integer>) u.data()[3];
-
-            List<Document> documentsEmpruntes = new ArrayList<>();
-            for (Integer i : idDocumentsEmpruntes) {
-                documentsEmpruntes.add(Mediatheque.getInstance().getDocument(i));
-            }
+            List<Document> documentsEmpruntes = getDocuments(u);
 
             req.setAttribute("documentsEmpruntes", documentsEmpruntes);
             req.getRequestDispatcher("/rendre.jsp").forward(req, resp);
@@ -56,5 +46,16 @@ public class RendreServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @NotNull
+    private List<Document> getDocuments(Utilisateur u) {
+        List<Integer> idDocumentsEmpruntes = (List<Integer>) u.data()[3];
+
+        List<Document> documentsEmpruntes = new ArrayList<>();
+        for (Integer i : idDocumentsEmpruntes) {
+            documentsEmpruntes.add(Mediatheque.getInstance().getDocument(i));
+        }
+        return documentsEmpruntes;
     }
 }

@@ -1,6 +1,7 @@
 <web-app>
     <display-name>Mediaweb</display-name>
 
+    <!--LoginServlet-->
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>services.LoginServlet</servlet-class>
@@ -10,6 +11,7 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
+    <!--LogoutServlet-->
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>services.LogoutServlet</servlet-class>
@@ -19,6 +21,7 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
+    <!--EmprunterServlet-->
     <servlet>
         <servlet-name>EmprunterServlet</servlet-name>
         <servlet-class>services.EmprunterServlet</servlet-class>
@@ -28,6 +31,7 @@
         <url-pattern>/emprunter</url-pattern>
     </servlet-mapping>
 
+    <!--RendreServlet-->
     <servlet>
         <servlet-name>RendreServlet</servlet-name>
         <servlet-class>services.RendreServlet</servlet-class>
@@ -35,5 +39,15 @@
     <servlet-mapping>
         <servlet-name>RendreServlet</servlet-name>
         <url-pattern>/rendre</url-pattern>
+    </servlet-mapping>
+
+    <!--AjouterServlet-->
+    <servlet>
+        <servlet-name>AjouterServlet</servlet-name>
+        <servlet-class>services.AjouterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjouterServlet</servlet-name>
+        <url-pattern>/ajouter</url-pattern>
     </servlet-mapping>
 </web-app>

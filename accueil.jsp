@@ -11,7 +11,7 @@
 
 	String actions;
 	if (u.isBibliothecaire()) {
-		actions = "<li>Ajouter un nouveau document</li>";
+		actions = "<li><a href=\"ajouter.jsp\">Ajouter un nouveau document</a></li>";
 	} else {
 		actions = "<li><a href=\"emprunter\">Emprunter un document</a></li><li><a href=\"rendre\">Rendre un document</a></li>";
 	}

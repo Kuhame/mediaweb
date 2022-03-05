@@ -40,7 +40,7 @@
 
 <form action="rendre" method="post" class="form">
     <label for="idDocument">Identifiant du document à rendre</label>
-    <input type="text" id="idDocument" name="idDocument" />
+    <input type="text" id="idDocument" name="idDocument" required />
     <input type="submit" value="Rendre" />
     <p><%= msg %></p>
 </form>

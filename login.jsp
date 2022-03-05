@@ -32,11 +32,12 @@
           <label for="pseudo" class="label">Nom d'utilisateur</label>
           <div class="control has-icons-left">
             <input
-              class="input is-rounded"
+              class="input"
               type="text"
               id="pseudo"
               name="pseudo"
               placeholder="Nom d'utilisateur"
+              required
             />
             <span class="icon is-small is-left">
               <i class="fa-solid fa-user"></i>
@@ -49,11 +50,12 @@
           <label for="motdepasse" class="label">Mot de passe</label>
           <div class="control has-icons-left">
             <input
-              class="input is-rounded"
+              class="input"
               type="password"
               id="motdepasse"
               name="motdepasse"
               placeholder="Mot de passe"
+              required
             />
             <span class="icon is-small is-left">
               <i class="fa-solid fa-lock"></i>
@@ -65,8 +67,8 @@
           <div class="control">
             <input
               type="submit"
-              class="button is-primary is-rounded is-fullwidth"
-              value="Connexion"
+              class="button is-primary is-fullwidth"
+              value="Se connecter"
             />
           </div>
         </div>

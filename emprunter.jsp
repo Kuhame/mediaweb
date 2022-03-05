@@ -40,7 +40,7 @@
 
 		<form action="emprunter" method="post" class="form">
 			<label for="idDocument">Identifiant du document à emprunter</label>
-			<input type="text" id="idDocument" name="idDocument" />
+			<input type="text" id="idDocument" name="idDocument" required />
 			<input type="submit" value="Emprunter" />
 			<p><%= msg %></p>
 		</form>
