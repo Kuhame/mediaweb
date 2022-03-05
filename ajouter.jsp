@@ -17,7 +17,7 @@
 %>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="is-clipped">
 	<head>
 		<link
 			rel="stylesheet"
@@ -32,7 +32,9 @@
 			crossorigin="anonymous"
 		></script>
 	</head>
-	<body class="scale135">
+	<body>
+		<div id="back-to-home">Retour à l'accueil</div>
+
 		<main class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center is-viewport">
 			<div class="box is-flex is-flex-direction-column is-justify-content-center is-align-items-center" style="width: 500px">
 				<h1 class="title">Ajouter un document</h1>
@@ -103,6 +105,7 @@
 							class="textarea has-fixed-size"
 							type="text"
 							rows="4"
+							maxlength="100"
 							id="description"
 							name="description"
 							placeholder="Description du document"

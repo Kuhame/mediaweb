@@ -52,18 +52,18 @@
 			crossorigin="anonymous"
 		></script>
 	</head>
-	<body class="scale135">
-		<main
-					class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center is-viewport"
-				>
-			<div class="box is-flex is-flex-direction-column is-justify-content-center is-align-items-center" style="width: 1300px">
+	<body>
+		<div id="back-to-home">Retour à l'accueil</div>
+
+		<main class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center">
+			<div class="box is-flex is-flex-direction-column is-justify-content-center is-align-items-center mt-6" style="width: 1300px">
 				<h1 class="title">Emprunter un document</h1>
 			</div>
 			<div class="box is-flex is-flex-direction-column is-justify-content-center is-align-items-center" style="width: 1300px">
 				<%= sb.toString() %>
 				</div>
 			</div>
-			<div class="box" style="width: 1300px">
+			<div class="box mb-6" style="width: 1300px">
 				<%= msg %>
 				<form action="emprunter" method="post" class="form">
 					<div class="field">
@@ -75,10 +75,11 @@
 							</span>
 						</div>
 						<input type="submit" value="Emprunter" class="button is-black is-fullwidth mt-2"/>
-					<div>
+					</div>
 				</form>
 			</div>
-		<main>
+		</main>
+
 		<script src="./js/main.js"></script>
 	</body>
 </html>

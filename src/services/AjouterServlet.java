@@ -15,7 +15,8 @@ public class AjouterServlet extends HttpServlet {
 
         Object[] args = new Object[] {
                 req.getParameter("nom"),
-                req.getParameter("auteur")
+                req.getParameter("auteur"),
+                req.getParameter("description")
         };
 
         Mediatheque.getInstance().ajoutDocument(typeDocument, args);

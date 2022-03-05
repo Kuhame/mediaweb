@@ -1,13 +1,5 @@
-html {
-	overflow: hidden;
-}
-
 body {
 	background-color: #485fc7;
-}
-
-.scale135 {
-	transform: scale(1.25);
 }
 
 .is-viewport {
@@ -20,11 +12,24 @@ select {
 	width: 100%;
 }
 
-.card{
+.card {
 	margin: 5px;
 	width: 400px;
 }
 
-.card-content{
+.card-content {
 	background-color: #faf7f5;
+}
+
+#back-to-home {
+	position: fixed;
+	padding: 5px;
+	border-radius: 7px;
+	top: 20px;
+	left: 20px;
+	z-index: 9999;
+	background-color: black;
+	cursor: pointer;
+	color: white;
+	font-size: 20px;
 }

@@ -36,17 +36,18 @@ public class MediathequeData implements PersistentMediatheque {
 				String nom = res.getString("nom");
 				String typeDocument = res.getString("typeDocument");
 				String auteur = res.getString("auteur");
+				String description = res.getString("description");
 				int emprunteur = -1;
 
 				switch (typeDocument) {
 					case "livre":
-						documents.add(new Livre(idDocument, nom, typeDocument, auteur, emprunteur));
+						documents.add(new Livre(idDocument, nom, typeDocument, auteur, description, emprunteur));
 						break;
 					case "dvd":
-						documents.add(new DVD(idDocument, nom, typeDocument, auteur, emprunteur));
+						documents.add(new DVD(idDocument, nom, typeDocument, auteur, description, emprunteur));
 						break;
 					case "cd":
-						documents.add(new CD(idDocument, nom, typeDocument, auteur, emprunteur));
+						documents.add(new CD(idDocument, nom, typeDocument, auteur, description, emprunteur));
 						break;
 					default:
 						throw new IllegalArgumentException("Type de document inconnu");
@@ -71,15 +72,14 @@ public class MediathequeData implements PersistentMediatheque {
 			reqUser.setString(2, password);
 			
 			ResultSet res = reqUser.executeQuery();
-			while (res.next()) {
-				int id = res.getInt("idUtilisateur");
-				String pseudo = res.getString("pseudo");
-				String motdepasse = res.getString("motdepasse");
-				String nom = res.getString("nom");
-				int estBiblio = res.getInt("estBibliothecaire");
-				return new User(id, pseudo, motdepasse, nom, estBiblio);
-				
-			}
+			res.next();
+
+			int id = res.getInt("idUtilisateur");
+			String pseudo = res.getString("pseudo");
+			String motdepasse = res.getString("motdepasse");
+			String nom = res.getString("nom");
+			int estBiblio = res.getInt("estBibliothecaire");
+			return new User(id, pseudo, motdepasse, nom, estBiblio);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -99,24 +99,24 @@ public class MediathequeData implements PersistentMediatheque {
 			req.setInt(1, numDocument);
 
 			ResultSet res = req.executeQuery();
+			res.next();
 
-			while (res.next()) {
-				int idDocument = res.getInt("idDocument");
-				String nom = res.getString("nom");
-				String typeDocument = res.getString("typeDocument");
-				String auteur = res.getString("auteur");
-				int emprunteur = res.getInt("emprunteur");
+			int idDocument = res.getInt("idDocument");
+			String nom = res.getString("nom");
+			String typeDocument = res.getString("typeDocument");
+			String auteur = res.getString("auteur");
+			String description = res.getString("description");
+			int emprunteur = res.getInt("emprunteur");
 
-				switch (typeDocument) {
-					case "livre":
-						return new Livre(idDocument, nom, typeDocument, auteur, emprunteur);
-					case "dvd":
-						return new DVD(idDocument, nom, typeDocument, auteur, emprunteur);
-					case "cd":
-						return new CD(idDocument, nom, typeDocument, auteur, emprunteur);
-					default:
-						throw new IllegalArgumentException("Numéro de document inconnu");
-				}
+			switch (typeDocument) {
+				case "livre":
+					return new Livre(idDocument, nom, typeDocument, auteur, description, emprunteur);
+				case "dvd":
+					return new DVD(idDocument, nom, typeDocument, auteur, description, emprunteur);
+				case "cd":
+					return new CD(idDocument, nom, typeDocument, auteur, description, emprunteur);
+				default:
+					throw new IllegalArgumentException("Numéro de document inconnu");
 			}
 
 
@@ -130,7 +130,7 @@ public class MediathequeData implements PersistentMediatheque {
 	public void ajoutDocument(int type, Object... args) {
 		try {
 			Connection connec = DataBase.connexionBD();
-			PreparedStatement req = connec.prepareStatement("INSERT INTO document (nom, typeDocument, auteur, emprunteur) VALUES (?, ?, ?, ?)");
+			PreparedStatement req = connec.prepareStatement("INSERT INTO document (nom, typeDocument, auteur, description, emprunteur) VALUES (?, ?, ?, ?, ?)");
 
 			// 0 : Nom du document
 			req.setString(1, (String) args[0]);
@@ -149,7 +149,15 @@ public class MediathequeData implements PersistentMediatheque {
 			// 1: Auteur du document
 			req.setString(3, (String) args[1]);
 
-			req.setObject(4, null);
+			// 2: Description
+			if (args[2] == null) {
+				req.setObject(4, null);
+			} else {
+				req.setString(4, (String) args[2]);
+			}
+
+			// Disponible
+			req.setObject(5, null);
 
 			req.executeUpdate();
 

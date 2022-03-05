@@ -19,7 +19,7 @@
 %>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="is-clipped">
 	<head>
 		<link
       		rel="stylesheet"
@@ -31,10 +31,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Accueil</title>
 	</head>
-	<body class="scale135">
+	<body>
 		<main class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center is-viewport">
 			<div class="box is-flex is-flex-direction-column is-justify-content-center is-align-items-center" style="width: 500px">
 				<h1 class="title">Accueil</h1>
+				<h2 class="subtitle pt-2">Bienvenue, <%= u.name() %> </h2>
 			</div>
 			<div class="box" style="width: 500px">
 					<%= actions %>

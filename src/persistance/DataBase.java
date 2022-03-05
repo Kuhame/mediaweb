@@ -15,11 +15,7 @@ public class DataBase {
 
 	
 	public static Connection connexionBD() throws Exception {
-		
 		Class.forName("com.mysql.jdbc.Driver");
-		
-		Connection conn = DriverManager.getConnection(url_jdbc, login, password);
-		
-		return conn;
+		return DriverManager.getConnection(url_jdbc, login, password);
 	}
 }

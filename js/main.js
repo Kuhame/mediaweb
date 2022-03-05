@@ -7,3 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.querySelector("#back-to-home").addEventListener("click", () => {
+    location.href = "./accueil.jsp";
+})

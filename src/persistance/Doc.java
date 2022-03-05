@@ -11,6 +11,7 @@ public abstract class Doc implements Document {
     private final String nom;
     private final String type;
     private final String auteur;
+    private final String description;
     private int emprunteur;
 
     private static Connection connection = null;
@@ -23,17 +24,18 @@ public abstract class Doc implements Document {
         }
     }
 
-    public Doc(int id, String nom, String type, String auteur, int emprunteur) {
+    public Doc(int id, String nom, String type, String auteur, String description, int emprunteur) {
         this.id = id;
         this.nom = nom;
         this.type = type;
         this.auteur = auteur;
+        this.description = description;
         this.emprunteur = emprunteur;
     }
 
     @Override
     public boolean disponible() {
-        return emprunteur == -1;
+        return emprunteur <= 0;
     }
 
     @Override
@@ -67,12 +69,12 @@ public abstract class Doc implements Document {
 
     @Override
     public String toString() {
-        return "Doc{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", type='" + type + '\'' +
-                ", auteur='" + auteur + '\'' +
-                ", emprunteur=" + emprunteur +
-                '}';
+        String s = "ID : " + id + "<br>" + "Nom : " + nom + "<br>" + "Type : " + type + "<br>" + "Auteur : " + auteur;
+
+        if (description != null) {
+            s += "<br>" + "Description : " + description;
+        }
+
+        return  s;
     }
 }

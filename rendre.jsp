@@ -52,8 +52,10 @@
 			crossorigin="anonymous"
 		></script>
 </head>
-<body class="scale135">
-    <main class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center is-viewport">
+<body>
+    <div id="back-to-home">Retour à l'accueil</div>
+
+    <main class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center is-viewport" style="transform: scale(0.9)">
         <div class="box is-flex is-flex-direction-column is-justify-content-center is-align-items-center" style="width: 1300px">
 			<h1 class="title">Rendre un document</h1>
 		</div>
@@ -66,17 +68,19 @@
 			<%= msg %>
             <form action="rendre" method="post" class="form">
                 <div class="field">
-                <label for="idDocument" class="label">Identifiant du document à rendre</label>
-                <div class="control has-icons-left">
-                    <input type="text" id="idDocument" name="idDocument" class="input" required />
-                    <span class="icon is-small is-left">
-						<i class="fa-solid fa-pen"></i>
-					</span>
-				</div>
+                    <label for="idDocument" class="label">Identifiant du document à rendre</label>
+                    <div class="control has-icons-left">
+                        <input type="text" id="idDocument" name="idDocument" class="input" required />
+                        <span class="icon is-small is-left">
+						    <i class="fa-solid fa-pen"></i>
+					    </span>
+				    </div>
+                </div>
                 <input type="submit" value="Rendre" class="button is-black is-fullwidth mt-2"/>
             </form>
         </div>
     </main>
+
     <script src="./js/main.js"></script>
 </body>
 </html>
