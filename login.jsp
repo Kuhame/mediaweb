@@ -26,7 +26,7 @@
       class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center is-viewport"
     >
       <h1 class="title">Connexion</h1>
-      <form action="login" method="post" style="width: 350px">
+      <form action="login" method="post" class="box" style="width: 350px">
         <!--Nom d'utilisateur-->
         <div class="field">
           <label for="pseudo" class="label">Nom d'utilisateur</label>
