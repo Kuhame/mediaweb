@@ -25,10 +25,10 @@
 		></script>
 	</head>
 	<body class="scale135">
-		<main
-			class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center is-viewport"
-		>
-			<h1 class="title">Ajouter un document</h1>
+		<main class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center is-viewport">
+			<div class="box is-flex is-flex-direction-column is-justify-content-center is-align-items-center" style="width: 500px">
+				<h1 class="title">Ajouter un document</h1>
+			</div>
 			<div id="wrapper" class="box" style="width: 500px">
                 <%= msg %>
                 <form

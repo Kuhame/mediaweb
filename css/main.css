@@ -3,7 +3,7 @@ html {
 }
 
 body {
-	background-color: #f5dfbb;
+	background-color: #485fc7;
 }
 
 .scale135 {
@@ -18,4 +18,13 @@ body {
 .select,
 select {
 	width: 100%;
+}
+
+.card{
+	margin: 5px;
+	width: 400px;
+}
+
+.card-content{
+	background-color: #faf7f5;
 }

@@ -22,10 +22,10 @@
     ></script>
   </head>
   <body class="scale135">
-    <main
-      class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center is-viewport"
-    >
-      <h1 class="title">Connexion</h1>
+    <main class="is-flex is-flex-direction-column is-justify-content-center is-align-items-center is-viewport">
+      <div class="box is-flex is-flex-direction-column is-justify-content-center is-align-items-center" style="width: 350px">
+				<h1 class="title">Connexion</h1>
+			</div>
       <form action="login" method="post" class="box" style="width: 350px">
         <!--Nom d'utilisateur-->
         <div class="field">
@@ -67,7 +67,7 @@
           <div class="control">
             <input
               type="submit"
-              class="button is-primary is-fullwidth"
+              class="button is-black is-fullwidth"
               value="Se connecter"
             />
           </div>
