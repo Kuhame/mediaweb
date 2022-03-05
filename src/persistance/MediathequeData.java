@@ -100,22 +100,25 @@ public class MediathequeData implements PersistentMediatheque {
 
 			ResultSet res = req.executeQuery();
 
-			int idDocument = res.getInt("idDocument");
-			String nom = res.getString("nom");
-			String typeDocument = res.getString("typeDocument");
-			String auteur = res.getString("auteur");
-			int emprunteur = -1;
+			while (res.next()) {
+				int idDocument = res.getInt("idDocument");
+				String nom = res.getString("nom");
+				String typeDocument = res.getString("typeDocument");
+				String auteur = res.getString("auteur");
+				int emprunteur = res.getInt("emprunteur");
 
-			switch (typeDocument) {
-				case "livre":
-					return new Livre(idDocument, nom, typeDocument, auteur, emprunteur);
-				case "dvd":
-					return new DVD(idDocument, nom, typeDocument, auteur, emprunteur);
-				case "cd":
-					return new CD(idDocument, nom, typeDocument, auteur, emprunteur);
-				default:
-					throw new IllegalArgumentException("Numéro de document inconnu");
+				switch (typeDocument) {
+					case "livre":
+						return new Livre(idDocument, nom, typeDocument, auteur, emprunteur);
+					case "dvd":
+						return new DVD(idDocument, nom, typeDocument, auteur, emprunteur);
+					case "cd":
+						return new CD(idDocument, nom, typeDocument, auteur, emprunteur);
+					default:
+						throw new IllegalArgumentException("Numéro de document inconnu");
+				}
 			}
+
 
 		} catch (Exception e) {
 			e.printStackTrace();

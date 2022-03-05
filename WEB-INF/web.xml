@@ -1,4 +1,6 @@
 <web-app>
+    <display-name>Mediaweb</display-name>
+
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>services.LoginServlet</servlet-class>
@@ -24,5 +26,14 @@
     <servlet-mapping>
         <servlet-name>EmprunterServlet</servlet-name>
         <url-pattern>/emprunter</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RendreServlet</servlet-name>
+        <servlet-class>services.RendreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RendreServlet</servlet-name>
+        <url-pattern>/rendre</url-pattern>
     </servlet-mapping>
 </web-app>
