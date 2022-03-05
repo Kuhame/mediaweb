@@ -1,5 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="mediatek2022.Utilisateur" %>
+
 <%
+	Utilisateur u = (Utilisateur) session.getAttribute("user");
+	if (u == null || !u.isBibliothecaire()) {
+		response.sendRedirect(request.getContextPath() + "/login.jsp");
+		return;
+	}
+
     String msg = (String) request.getAttribute("msg");
 	if (msg == null) {
 		msg = "<p></p>";
@@ -91,7 +99,6 @@
 				<div class="field">
 					<label for="description" class="label">Description</label>
 					<div class="control has-icons-left">
-						<!--TODO set required-->
 						<textarea
 							class="textarea has-fixed-size"
 							type="text"

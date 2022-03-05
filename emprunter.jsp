@@ -1,10 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="mediatek2022.Document" %>
+<%@ page import="mediatek2022.Utilisateur" %>
 <%@ page import="java.util.List" %>
 
 <%
+	Utilisateur u = (Utilisateur) session.getAttribute("user");
 	// Redirection si pas connecté
-	if (session.getAttribute("user") == null) {
+	if (u == null || u.isBibliothecaire()) {
 		response.sendRedirect(request.getContextPath() + "/login.jsp");
 		return;
 	}
