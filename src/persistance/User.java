@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User implements Utilisateur{
+public class User implements Utilisateur {
 	private final int id;
 	private final String pseudo;
 	private final String mdp;
