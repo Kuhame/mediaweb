@@ -15,25 +15,6 @@ public class DataBase {
 	private static Connection connection;
 
 	static {
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-		System.out.println("JE SUIS UNE GROSSE SALOPE");
-
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			connection =  DriverManager.getConnection(url_jdbc, login, password);
