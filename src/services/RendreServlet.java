@@ -34,20 +34,20 @@ public class RendreServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         Utilisateur u = (Utilisateur) session.getAttribute("user");
         List<Document> documentsEmpruntes = getDocuments(u);
-        if(d!=null){
+        if (d != null) {
             try {
                 Mediatheque.getInstance().retour(d, u);
                 req.setAttribute("msg", "Retour effectué avec succès");
 
-
+                documentsEmpruntes = getDocuments(u);
                 req.setAttribute("documentsEmpruntes", documentsEmpruntes);
                 req.getRequestDispatcher("/rendre.jsp").forward(req, resp);
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }else{
-            req.setAttribute("msg", "Vous n'avez pas emprunter ce document");
+        } else {
+            req.setAttribute("msg", "Vous n'avez pas emprunté ce document");
             req.setAttribute("documentsEmpruntes", documentsEmpruntes);
             req.getRequestDispatcher("/rendre.jsp").forward(req, resp);
         }
