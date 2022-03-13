@@ -26,7 +26,7 @@ public class EmprunterServlet extends HttpServlet {
 
         HttpSession session = req.getSession(false);
         Utilisateur u = (Utilisateur) session.getAttribute("user");
-        if(d!=null){
+        if (d != null) {
             try {
                 Mediatheque.getInstance().emprunt(d, u);
                 req.setAttribute("msg", "Emprunt effectué avec succès");
@@ -36,7 +36,7 @@ public class EmprunterServlet extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }else{
+        } else {
             req.setAttribute("msg", "Ce document n'existe pas");
             req.setAttribute("documentsDisponibles", Mediatheque.getInstance().tousLesDocumentsDisponibles());
             req.getRequestDispatcher("/emprunter.jsp").forward(req, resp);
